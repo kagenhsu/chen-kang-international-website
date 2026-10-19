@@ -253,3 +253,11 @@
 .diagram-lightbox-stage.is-zoomed{display:block}
 .diagram-lightbox-stage.is-zoomed img{width:1280px;height:auto;max-width:none;max-height:none;object-fit:initial;cursor:zoom-out}
 @media(max-width:680px){.diagram-lightbox{width:100vw;height:100dvh;border-radius:0}.diagram-lightbox-toolbar{min-height:54px;padding:0 12px 0 16px}.diagram-lightbox-toolbar strong{font-size:15px}.diagram-zoom-toggle{padding:8px 15px}.diagram-lightbox-close{width:38px;height:38px}.diagram-lightbox-stage{padding:10px}.diagram-lightbox-stage.is-zoomed img{width:1100px}}
+
+/* V3.8: replace the abstract CONNECT panel with an authentic brand-planning scene */
+.about-connection-photo{min-height:470px;margin:0;border-radius:32px;overflow:hidden;position:relative;background:#eaf2f4;box-shadow:var(--shadow)}
+.about-connection-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 58%,rgba(7,31,49,.18));pointer-events:none}
+.about-connection-photo img{display:block;width:100%;height:470px;object-fit:cover;object-position:center;transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.about-connection-photo:hover img{transform:scale(1.025)}
+@media(max-width:680px){.about-connection-photo{min-height:330px;border-radius:24px}.about-connection-photo img{height:330px}}
+@media(prefers-reduced-motion:reduce){.about-connection-photo img{transition:none}.about-connection-photo:hover img{transform:none}}
