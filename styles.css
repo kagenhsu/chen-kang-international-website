@@ -206,3 +206,10 @@
 @keyframes ambientOrb{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-18px,16px,0) scale(1.08)}}
 @media(max-width:1050px){@keyframes heroMediaIn{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}}
 @media(prefers-reduced-motion:reduce){.motion-reveal,.motion-reveal .motion-item{opacity:1!important;transform:none!important}.page-hero:before,.page-hero:after{animation:none!important}}
+
+/* V3.1: channel exposure process diagram */
+.exposure-process-figure{max-width:1200px;margin:44px auto 0;overflow:hidden;border-radius:30px;background:#fff;box-shadow:0 22px 55px rgba(12,53,83,.1)}
+.exposure-process-figure img{display:block;width:100%;height:auto}
+.exposure-process-figure figcaption{padding:13px 20px;text-align:center;color:#6f7d83;background:#fff;font-size:12px;letter-spacing:.04em}
+.exposure-process-figure figcaption span{display:none}
+@media(max-width:680px){.exposure-process-figure{margin-top:32px;overflow-x:auto;border-radius:18px}.exposure-process-figure img{width:820px;max-width:none}.exposure-process-figure figcaption{position:sticky;left:0;width:100%;text-align:left}.exposure-process-figure figcaption span{display:block;margin-top:3px;color:#168e85;font-weight:700}}
