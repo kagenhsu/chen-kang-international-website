@@ -65,7 +65,7 @@ function showPage(name, updateHash = true, trackView = true) {
   document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
   mobileNav.classList.remove('open');
   mobileMenuButton.setAttribute('aria-expanded', 'false');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
   if (trackView) window.trackVirtualPageView?.(pageName, meta.title);
 }
 

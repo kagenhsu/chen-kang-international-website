@@ -265,3 +265,7 @@
 /* V3.9: focus the ABOUT hero on all four people and remove the source image's empty left area */
 .about-theme .page-hero-media{height:auto;min-height:0;aspect-ratio:1.45}
 .about-theme .page-hero-media img{object-position:right center}
+
+/* V3.10: keep inner-page heroes visually clear of the sticky site header */
+.page.active>.page-hero{margin-top:16px;scroll-margin-top:80px}
+@media(max-width:680px){.page.active>.page-hero{margin-top:10px;scroll-margin-top:78px}}
