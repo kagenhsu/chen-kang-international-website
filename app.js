@@ -4,6 +4,37 @@ const mobileMenuButton = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
 const backToTopButton = document.querySelector('.back-to-top');
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const motionTargets = [...document.querySelectorAll([
+  '[data-page] > .section',
+  '[data-page] > .cta-panel',
+  '[data-page] > .quote-band',
+  '[data-page] > .contact-section',
+  '[data-page] > .legal-content'
+].join(','))];
+
+motionTargets.forEach((element) => element.classList.add('motion-reveal'));
+
+document.querySelectorAll('.journey-grid, .feature-grid, .website-feature-gallery, .steps, .audience-grid, .case-grid, .one-view-grid').forEach((group) => {
+  [...group.children].forEach((item, index) => {
+    item.classList.add('motion-item');
+    item.style.setProperty('--motion-order', Math.min(index, 5));
+  });
+});
+
+if (reduceMotion) {
+  motionTargets.forEach((element) => element.classList.add('is-in-view'));
+} else {
+  const motionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in-view');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+  motionTargets.forEach((element) => motionObserver.observe(element));
+}
+
 const pageMeta = {
   home: { title: '辰漮國際｜品牌連結與網路行銷', description: '從電子名片、官方網站到通路曝光與多元合作，建立完整的品牌接觸旅程。' },
   about: { title: '關於辰漮｜辰漮國際', description: '了解辰漮國際如何協助個人與企業整合品牌資訊、數位工具與合作通路。' },
@@ -21,6 +52,8 @@ function showPage(name, updateHash = true, trackView = true) {
   const pageName = target.dataset.page;
   const meta = pageMeta[pageName] || pageMeta.home;
   pages.forEach((page) => page.classList.toggle('active', page === target));
+  target.classList.remove('page-motion-ready');
+  requestAnimationFrame(() => target.classList.add('page-motion-ready'));
   links.forEach((link) => link.classList.toggle('active', link.dataset.pageLink === pageName));
   if (updateHash) history.replaceState(null, '', `#${pageName}`);
   document.title = meta.title;
