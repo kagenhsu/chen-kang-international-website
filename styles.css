@@ -261,3 +261,7 @@
 .about-connection-photo:hover img{transform:scale(1.025)}
 @media(max-width:680px){.about-connection-photo{min-height:330px;border-radius:24px}.about-connection-photo img{height:330px}}
 @media(prefers-reduced-motion:reduce){.about-connection-photo img{transition:none}.about-connection-photo:hover img{transform:none}}
+
+/* V3.9: focus the ABOUT hero on all four people and remove the source image's empty left area */
+.about-theme .page-hero-media{height:auto;min-height:0;aspect-ratio:1.45}
+.about-theme .page-hero-media img{object-position:right center}

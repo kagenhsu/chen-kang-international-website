@@ -6,6 +6,8 @@
 
 GitHub Pages：<https://kagenhsu.github.io/chen-kang-international-website/>
 
+正式網址：<https://www.get-business.tw/>（待 DNS 指向正式網站）
+
 ## 本機預覽
 
 在此資料夾執行：
@@ -18,7 +20,7 @@ python -m http.server 4319 --bind 127.0.0.1
 
 ## 正式上線前待補
 
-- 正式網域與七個實體頁面網址
+- 將已確認的正式網域 DNS 指向網站，並規劃七個實體頁面網址
 - GA4 Measurement ID
 - Search Console 網域驗證與 sitemap
 - LINE、電話、Email 與 QR Code
