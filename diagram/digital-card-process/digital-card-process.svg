@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1320 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="process-title process-desc">
+  <title id="process-title">多頁式電子名片製作流程</title>
+  <desc id="process-desc">依序提供資料、進行版面設計、確認修改，最後交付使用。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f9f8"/>
+      <stop offset="0.55" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fff7e8"/>
+    </linearGradient>
+    <linearGradient id="flowLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7b947"/>
+      <stop offset="0.36" stop-color="#168e85"/>
+      <stop offset="0.7" stop-color="#17699d"/>
+      <stop offset="1" stop-color="#d7194d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#0c3553" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0 0 L12 5 L0 10 Z" fill="#168e85"/>
+    </marker>
+    <style>
+      text { font-family:'JetBrains Mono','Noto Sans SC','PingFang SC','Microsoft JhengHei',sans-serif; }
+      .title { fill:#0c3553; font-size:30px; font-weight:700; letter-spacing:2px; }
+      .subtitle { fill:#718089; font-size:15px; letter-spacing:1.5px; }
+      .step-title { fill:#0c3553; font-size:22px; font-weight:700; }
+      .step-copy { fill:#667780; font-size:15px; }
+      .step-no { fill:#ffffff; font-size:20px; font-weight:700; }
+      .phase { font-size:11px; font-weight:700; letter-spacing:2px; }
+    </style>
+  </defs>
+
+  <rect width="1320" height="470" rx="32" fill="url(#background)"/>
+  <path d="M52 52 H210" stroke="#d7194d" stroke-width="5" stroke-linecap="round"/>
+  <text x="52" y="94" class="title">多頁式電子名片製作流程</text>
+  <text x="52" y="124" class="subtitle">從資料準備，到完成交付</text>
+
+  <!-- flow connectors -->
+  <path d="M330 284 H376" fill="none" stroke="#168e85" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M635 284 H681" fill="none" stroke="#168e85" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M940 284 H986" fill="none" stroke="#168e85" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M155 420 H1165" fill="none" stroke="url(#flowLine)" stroke-width="5" stroke-linecap="round" opacity="0.18"/>
+
+  <!-- opaque masks and cards -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="180" width="280" height="210" rx="24" fill="#ffffff"/>
+    <rect x="50" y="180" width="280" height="210" rx="24" fill="#ffffff" stroke="#eedaa9" stroke-width="2"/>
+    <rect x="355" y="180" width="280" height="210" rx="24" fill="#ffffff"/>
+    <rect x="355" y="180" width="280" height="210" rx="24" fill="#ffffff" stroke="#b9dfda" stroke-width="2"/>
+    <rect x="660" y="180" width="280" height="210" rx="24" fill="#ffffff"/>
+    <rect x="660" y="180" width="280" height="210" rx="24" fill="#ffffff" stroke="#bdd6e7" stroke-width="2"/>
+    <rect x="965" y="180" width="280" height="210" rx="24" fill="#ffffff"/>
+    <rect x="965" y="180" width="280" height="210" rx="24" fill="#ffffff" stroke="#efbdca" stroke-width="2"/>
+  </g>
+
+  <!-- numbered nodes -->
+  <g>
+    <circle cx="190" cy="180" r="34" fill="#f7b947" stroke="#ffffff" stroke-width="7"/>
+    <circle cx="495" cy="180" r="34" fill="#168e85" stroke="#ffffff" stroke-width="7"/>
+    <circle cx="800" cy="180" r="34" fill="#17699d" stroke="#ffffff" stroke-width="7"/>
+    <circle cx="1105" cy="180" r="34" fill="#d7194d" stroke="#ffffff" stroke-width="7"/>
+    <text x="190" y="187" text-anchor="middle" class="step-no">01</text>
+    <text x="495" y="187" text-anchor="middle" class="step-no">02</text>
+    <text x="800" y="187" text-anchor="middle" class="step-no">03</text>
+    <text x="1105" y="187" text-anchor="middle" class="step-no">04</text>
+  </g>
+
+  <!-- step text -->
+  <g text-anchor="middle">
+    <text x="190" y="247" class="phase" fill="#bd7e08">資料準備</text>
+    <text x="190" y="286" class="step-title">提供資料</text>
+    <text x="190" y="326" class="step-copy">Logo、照片</text>
+    <text x="190" y="351" class="step-copy">與聯絡方式</text>
+
+    <text x="495" y="247" class="phase" fill="#168e85">視覺規劃</text>
+    <text x="495" y="286" class="step-title">版面設計</text>
+    <text x="495" y="326" class="step-copy">整理資訊</text>
+    <text x="495" y="351" class="step-copy">與品牌風格</text>
+
+    <text x="800" y="247" class="phase" fill="#17699d">內容校對</text>
+    <text x="800" y="286" class="step-title">確認修改</text>
+    <text x="800" y="326" class="step-copy">核對文字</text>
+    <text x="800" y="351" class="step-copy">與所有連結</text>
+
+    <text x="1105" y="247" class="phase" fill="#d7194d">正式使用</text>
+    <text x="1105" y="286" class="step-title">交付使用</text>
+    <text x="1105" y="326" class="step-copy">取得網址</text>
+    <text x="1105" y="351" class="step-copy">與 QR Code</text>
+  </g>
+</svg>

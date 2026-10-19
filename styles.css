@@ -148,6 +148,10 @@
 .page-hero-media:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(145deg,transparent 55%,rgba(7,31,49,.32));pointer-events:none}
 .page-hero-media img{height:100%;min-height:100%;object-fit:cover;transition:transform .7s ease}
 .privacy-hero-media img{object-position:center}
+.card-process-figure{max-width:1180px;margin:44px auto 0;overflow:hidden;border-radius:28px;background:#fff;box-shadow:0 22px 55px rgba(12,53,83,.09)}
+.card-process-figure img{display:block;width:100%;height:auto}
+.card-process-figure figcaption{padding:12px 20px;text-align:center;color:#6f7d83;background:#fff;font-size:12px;letter-spacing:.04em}
+.card-process-figure figcaption span{display:none}
 .page-hero:hover .page-hero-media img{transform:scale(1.025)}
 .page-hero-media figcaption{z-index:2;border-radius:0 12px 0 0}
 .about-theme{background:linear-gradient(135deg,#f0f8f6 0%,#fff 58%,#fff5e6 100%)}
@@ -168,3 +172,4 @@
 .legal-visual strong{font-size:25px;margin-top:25px;position:relative;z-index:2}.legal-visual small{font-size:11px;letter-spacing:.2em;opacity:.72;position:relative;z-index:2}
 @media(max-width:1050px){.page-hero{padding-top:75px;padding-bottom:80px}.page-hero-media{height:430px;transform:none}.legal-visual{height:380px}}
 @media(max-width:680px){.page-hero{padding:58px 20px 64px;gap:38px}.page-hero-copy:before{width:58px;margin-bottom:20px}.page-hero-copy h1{font-size:41px}.page-hero-copy>p{font-size:16px}.hero-tags{margin-bottom:25px}.page-hero-media{height:300px;border-width:6px;border-radius:24px 7px 24px 7px}.legal-hero{padding-top:58px;padding-bottom:64px}.legal-visual{height:300px;border-radius:26px 8px 26px 8px}.legal-icon{width:92px;height:92px;font-size:34px}.legal-visual strong{font-size:20px}}
+@media(max-width:680px){.card-process-figure{margin-top:32px;overflow-x:auto;border-radius:18px}.card-process-figure img{width:790px;max-width:none}.card-process-figure figcaption{position:sticky;left:0;width:100%;text-align:left}.card-process-figure figcaption span{display:block;margin-top:3px;color:#168e85;font-weight:700}}
