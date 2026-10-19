@@ -213,3 +213,8 @@
 .exposure-process-figure figcaption{padding:13px 20px;text-align:center;color:#6f7d83;background:#fff;font-size:12px;letter-spacing:.04em}
 .exposure-process-figure figcaption span{display:none}
 @media(max-width:680px){.exposure-process-figure{margin-top:32px;overflow-x:auto;border-radius:18px}.exposure-process-figure img{width:820px;max-width:none}.exposure-process-figure figcaption{position:sticky;left:0;width:100%;text-align:left}.exposure-process-figure figcaption span{display:block;margin-top:3px;color:#168e85;font-weight:700}}
+
+/* V3.2: use the approved company logo as the partner-network hub */
+.center-node{padding:25px;background:white;border:3px solid rgba(8,112,74,.22);color:inherit;font-size:0}
+.center-node img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:680px){.center-node{padding:18px}}
