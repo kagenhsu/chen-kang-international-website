@@ -3,6 +3,11 @@ const links = [...document.querySelectorAll('[data-page-link]')];
 const mobileMenuButton = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
 const backToTopButton = document.querySelector('.back-to-top');
+const diagramLightbox = document.querySelector('#diagram-lightbox');
+const diagramLightboxImage = diagramLightbox?.querySelector('img');
+const diagramLightboxStage = diagramLightbox?.querySelector('.diagram-lightbox-stage');
+const diagramZoomToggle = diagramLightbox?.querySelector('.diagram-zoom-toggle');
+const diagramLightboxClose = diagramLightbox?.querySelector('.diagram-lightbox-close');
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const motionTargets = [...document.querySelectorAll([
@@ -82,5 +87,58 @@ backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavi
 window.addEventListener('scroll', () => {
   backToTopButton.classList.toggle('visible', window.scrollY > 420);
 }, { passive: true });
+
+const diagramImages = [...document.querySelectorAll([
+  '.journey-flow-figure img',
+  '.card-process-figure img',
+  '.exposure-process-figure img',
+  '.service-journey-figure img'
+].join(','))];
+
+function setDiagramZoom(isZoomed) {
+  diagramLightboxStage?.classList.toggle('is-zoomed', isZoomed);
+  if (diagramZoomToggle) {
+    diagramZoomToggle.textContent = isZoomed ? '還原' : '放大';
+    diagramZoomToggle.setAttribute('aria-pressed', String(isZoomed));
+  }
+  if (!isZoomed && diagramLightboxStage) {
+    diagramLightboxStage.scrollTop = 0;
+    diagramLightboxStage.scrollLeft = 0;
+  }
+}
+
+function openDiagramLightbox(image) {
+  if (!diagramLightbox || !diagramLightboxImage) return;
+  diagramLightboxImage.src = image.currentSrc || image.src;
+  diagramLightboxImage.alt = image.alt;
+  setDiagramZoom(false);
+  diagramLightbox.showModal();
+}
+
+diagramImages.forEach((image) => {
+  image.classList.add('diagram-preview-trigger');
+  image.tabIndex = 0;
+  image.setAttribute('role', 'button');
+  image.setAttribute('aria-label', `${image.alt}，點擊放大查看`);
+  image.addEventListener('click', () => openDiagramLightbox(image));
+  image.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    openDiagramLightbox(image);
+  });
+});
+
+diagramZoomToggle?.addEventListener('click', () => {
+  setDiagramZoom(!diagramLightboxStage?.classList.contains('is-zoomed'));
+});
+diagramLightboxImage?.addEventListener('click', () => {
+  setDiagramZoom(!diagramLightboxStage?.classList.contains('is-zoomed'));
+});
+diagramLightboxClose?.addEventListener('click', () => diagramLightbox?.close());
+diagramLightbox?.addEventListener('click', (event) => {
+  if (event.target === diagramLightbox) diagramLightbox.close();
+});
+diagramLightbox?.addEventListener('close', () => setDiagramZoom(false));
+
 window.addEventListener('hashchange', () => showPage(location.hash.slice(1) || 'home', false));
 showPage(location.hash.slice(1) || 'home', false);
