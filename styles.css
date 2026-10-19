@@ -167,6 +167,7 @@
 .legal-visual:before,.legal-visual:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.22);border-radius:50%}
 .legal-visual:before{width:310px;height:310px}.legal-visual:after{width:225px;height:225px;border-style:dashed}
 .legal-visual.document{background:radial-gradient(circle at 72% 24%,rgba(255,255,255,.2),transparent 25%),linear-gradient(145deg,#17699d,#4c347e)}
+.legal-photo img{object-position:58% center}
 .legal-icon{width:118px;height:118px;border-radius:34px 34px 50% 50%;display:grid;place-items:center;position:relative;z-index:2;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.82);font-size:44px;font-weight:900;backdrop-filter:blur(8px)}
 .legal-visual.document .legal-icon{border-radius:18px}
 .legal-visual strong{font-size:25px;margin-top:25px;position:relative;z-index:2}.legal-visual small{font-size:11px;letter-spacing:.2em;opacity:.72;position:relative;z-index:2}
