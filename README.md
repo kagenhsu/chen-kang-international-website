@@ -23,7 +23,7 @@ python -m http.server 4319 --bind 127.0.0.1
 - 將已確認的正式網域 DNS 指向網站，並規劃七個實體頁面網址
 - GA4 Measurement ID
 - Search Console 網域驗證與 sitemap
-- LINE、電話、Email 與 QR Code
+- Email（LINE 官方帳號連結、QR Code 及聯絡電話已提供）
 - 經授權的案例資料及公司實景照片
 
 詳細追蹤與 SEO 設定請見 `SEO-GA4設定說明.md`。
